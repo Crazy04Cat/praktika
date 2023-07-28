@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <title>Мой кабинет</title>
 </head>
 <body>
@@ -28,10 +29,10 @@
             <hr class="line">
             <a href="#" class="href commentaires">Отзывы о товарах</a>
             <hr class="line">
-            <a href="https://www.youtube.com/watch?v=Q4k-hfCDrcY " class="href exit">Выход</a>
+            <a href="#" class="href exit">Выход</a>
         </div>
 
-        <form class="profile">
+        <form class="profile" method="post">
             <h2 class="text_my_profile">Мой профиль</h2>
             <div class="choice">
                 <div class="bloc_href_background">
@@ -41,36 +42,89 @@
                 <a href="#" class="href2">Пароль</a>
             </div>
             <p class="text">E-mail<span class="red">*</span></p>
-            <input class="input mail" type="text" value="mingalyovuxcheck@gmail.com">
+            <input class="input mail" type="email" name="email" required data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
             <div class="phone">
                 <div>
                     <p class="text_phone">Номер телефона<span class="red">*</span></p>
-                    <input class="phone_input one" type="text" value="+7 910 832 26 28">
+                    <input class="phone_input one" type="phone" name="phoneNumber" required data-reg="^((\+7|7|8)+([0-9]){10})$">
                 </div>
                 <div>
                     <p class="text_phone">Дополнительный номер</p>
-                    <input class="phone_input too" type="text">
+                    <input class="phone_input too" type="phone" name="backUpPhone" data-reg="^((\+7|7|8)+([0-9]){10})$">
                 </div>
             </div>
             <p class="text">Фамилия<span class="red">*</span></p>
-            <input class="input surname" type="text" value="Мингалёв">
+            <input class="input surname" type="text" name="surname" required>
             <p class="text">Имя<span class="red">*</span></p>
-            <input class="input name" type="text" value="Михаил">
+            <input class="input name" type="text" name="name" required>
             <p class="text">Отчество</p>
-            <input class="input patronymic" type="text" value="Михайлович">
+            <input class="input patronymic" type="text" name="fathersName">
             <p class="text">Дата рождения</p>
-            <input class="input date" type="date" value="23.09.1993">
+            <div class="day">
+                <select class="dayOfBirth" name="dayOfBirth">
+				    <option value="1" selected>1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				    <option value="4">4</option>
+				    <option value="5">5</option>
+				    <option value="6">6</option>
+				    <option value="7">7</option>
+				    <option value="8">8</option>
+				    <option value="9">9</option>
+				    <option value="10">10</option>
+				    <option value="11">11</option>
+				    <option value="12">12</option>
+				    <option value="13">13</option>
+				    <option value="14">14</option>
+				    <option value="15">15</option>
+				    <option value="16">16</option>
+				    <option value="17">17</option>
+				    <option value="18">18</option>
+				    <option value="19">19</option>
+				    <option value="20">20</option>
+				    <option value="21">21</option>
+				    <option value="22">22</option>
+				    <option value="23">23</option>
+				    <option value="24">24</option>
+				    <option value="25">25</option>
+				    <option value="26">26</option>
+				    <option value="27">27</option>
+				    <option value="28">28</option>
+				    <option value="29">29</option>
+				    <option value="30">30</option>
+				    <option value="31">31</option>
+			    </select>
+			    <select class="monthOfBirth" name="monthOfBirth">
+				    <option value="1" selected>Январь</option>
+				    <option value="2">Февраль</option>
+				    <option value="3">Март</option>
+				    <option value="4">Апрель</option>
+				    <option value="5">Май</option>
+				    <option value="6">Июнь</option>
+				    <option value="7">Июль</option>
+				    <option value="8">Август</option>
+				    <option value="9">Сентябрь</option>
+				    <option value="10">Октябрь</option>
+				    <option value="11">Ноябрь</option>
+				    <option value="12">Декабрь</option>
+		        </select>
+			    <select id="yearOfBirth" name="yearOfBirth"></select>
+            </div>
             <p class="text">Пол</p>
             <div class="floor">
-                <a href="#" class="bloc_men_background">
-                    <p class="men">Мужской</p>
-                </a>
-                <a href="#" class="bloc_women_background">
-                    <p class="women">Женский</p>
-                </a>
+                <div class="form_radio_btn">
+                    <input type="radio" id="radio-male" name ="pendalf" value="male" checked>
+                    <label for="radio-male">Мужской</label>
+                </div>
+                <div class="form_radio_btn">
+                    <input type="radio" id="radio-female" name ="pendalf" value="female">
+                    <label for="radio-female">Женский</label>
+                </div>
             </div>
-            <button class="button">Сохранить изменения</button>
+            <button class="button" name="saveChanges">Сохранить изменения</button>
         </form>
     </div>
+    <script type="text/javascript" src="add.js"></script>
+    <script type="text/javascript" src="add2.js"></script>
 </body>
 </html>
